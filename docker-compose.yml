@@ -1,0 +1,33 @@
+version: '3'
+services:
+    meemo:
+        image: qmcgaw/meemo
+        container_name: meemo
+        volumes:
+            - /mypath/users.json:/users.json
+            - /mypath/data:/data
+        environment:
+            - LOCAL_AUTH_FILE=/users.json
+            - ATTACHMENT_DIR=/data
+            - MONGODB_URL=mongodb://mongodb:27017/meemo
+            - NODE_ENV=production
+            - APP_ORIGIN=http://localhost
+        ports:
+            - 3000:3000
+        depends_on:
+            - mongodb
+        networks:
+            - backend
+        restart: always
+    mongodb:
+        image: mongo
+        container_name: meemo_mongo
+        volumes:
+            - /mypath/database:/data/db
+        networks:
+            - backend
+        restart: always
+        
+networks:
+    backend:
+        driver: bridge

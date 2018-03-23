@@ -1,0 +1,4 @@
+.gitignore
+commands.sh
+docker-compose.yml
+readme.md
