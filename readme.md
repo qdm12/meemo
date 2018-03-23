@@ -17,7 +17,7 @@ This image is **172 MB** and consumes **58 MB** of RAM (and 87MB for MongoDB)
 It is based on:
 - Alpine Linux
 - NodeJS
-- [Meemo]((https://github.com/nebulade/meemo)) and its NodeJS dependencies
+- [Meemo](https://github.com/nebulade/meemo) and its NodeJS dependencies
 
 It also depends on a MongoDB database which is launched with Docker Compose.
 
@@ -30,8 +30,8 @@ It also depends on a MongoDB database which is launched with Docker Compose.
     - The data directory `yourpath/data`
     - The data directory `yourpath/database`
 1. Make sure you have [Docker](https://docs.docker.com/install/) installed
-1. Download [**docker-compose.yml**](https://github.com/qdm12/meemo/blob/master/docker-compose.yml) on your host
-1. Modify the following:
+1. Download [**docker-compose.yml**](https://raw.githubusercontent.com/qdm12/meemo/master/docker-compose.yml) on your host
+1. In *docker-compose.yml*, modify the following:
     - `yourpath/users.json` to match your real path
     - `yourpath/data` to match your real path
     - `yourpath/database` to match your real path
@@ -42,11 +42,11 @@ It also depends on a MongoDB database which is launched with Docker Compose.
     sudo docker-compose up -d
     ```
     
-1. You can now access Meemo at [localhost:3000](localhost:3000)
+1. You can now access Meemo at [localhost:3000](localhost:3000) (depending on your port in docker-compose.yml)
 
 ## Configuration
 
-For your convenience, a shell script [**commands.sh**](https://github.com/qdm12/meemo/blob/master/commands.sh) can be executed on your host
+For your convenience, a shell script [**commands.sh**](https://raw.githubusercontent.com/qdm12/meemo/master/commands.sh) can be executed on your host
 
 The following options are provided:
 - List users
