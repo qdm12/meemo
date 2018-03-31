@@ -1,6 +1,6 @@
 # Meemo on Docker
 
-Runs a lightweight Meemo server with database on Docker with docker-compose.
+Run a lightweight Meemo v1.7.0 server with database on Docker with docker-compose.
 
 Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**](https://github.com/nebulade/meemo).
 
@@ -12,12 +12,16 @@ Docker build:
 Meemo build:
 [![Build Status](https://travis-ci.org/nebulade/meemo.svg?branch=master)](https://travis-ci.org/nebulade/meemo)
 
-This image is **172 MB** and consumes **58 MB** of RAM (and 87MB for MongoDB)
+
+[![](https://images.microbadger.com/badges/image/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo "Get your own version badge on microbadger.com")
+
+This image is **157MB** and consumes **67MB** of RAM (and 48MB for MongoDB).
 
 It is based on:
-- Alpine Linux
-- NodeJS
 - [Meemo](https://github.com/nebulade/meemo) and its NodeJS dependencies
+- Alpine Linux
+- Nodejs
 
 It also depends on a MongoDB database which is launched with Docker Compose.
 
@@ -35,7 +39,7 @@ It also depends on a MongoDB database which is launched with Docker Compose.
     - `yourpath/users.json` to match your real path
     - `yourpath/data` to match your real path
     - `yourpath/database` to match your real path
-    - The port mapping if you want `3000:3000`
+    - Optionally, the port mapping `3000:3000/tcp`
 1. Launch the MongoDB database and Meemo container with:
 
     ```
