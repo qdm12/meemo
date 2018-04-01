@@ -16,7 +16,9 @@ Meemo build:
 [![](https://images.microbadger.com/badges/image/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo "Get your own version badge on microbadger.com")
 
-This image is **157MB** and consumes **67MB** of RAM (and 48MB for MongoDB).
+| Download size | Image size | RAM usage | CPU usage |
+| --- | --- | --- | --- |
+| 54.3MB | 157MB | 70MB | Very low |
 
 It is based on:
 - [Meemo](https://github.com/nebulade/meemo) and its NodeJS dependencies
