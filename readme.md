@@ -1,6 +1,6 @@
 # Meemo on Docker
 
-Run a lightweight Meemo v1.7.0 server with database on Docker with docker-compose.
+Run a lightweight Meemo v1.8.1 server with database on Docker with docker-compose.
 
 Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**](https://github.com/nebulade/meemo).
 
@@ -18,12 +18,12 @@ Meemo build:
 
 | Download size | Image size | RAM usage | CPU usage |
 | --- | --- | --- | --- |
-| 54.3MB | 157MB | 70MB | Very low |
+| 54.3MB | 153MB | 70MB | Very low |
 
 It is based on:
 - [Meemo](https://github.com/nebulade/meemo) and its NodeJS dependencies
-- Alpine Linux
-- Nodejs
+- Alpine Linux 3.8
+- NPM
 
 It also depends on a MongoDB database which is launched with Docker Compose.
 
