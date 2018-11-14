@@ -1,6 +1,10 @@
-.git/
+.gitignore
 .travis.yml
-readme/
-commands.sh
+README.md
 docker-compose.yml
-readme.md
+.git/
+readme/
+*.exe
+data/
+database/
+users.json

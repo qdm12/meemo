@@ -31,8 +31,10 @@ LABEL org.label-schema.schema-version="1.0.0-rc1" \
       org.label-schema.version="" \
       image-size="115MB" \
       ram-usage="70MB" \
-      cpu-usage="Very low"
+      cpu-usage="Low"
 EXPOSE 3000/tcp
+HEALTHCHECK --interval=3m --timeout=5s --start-period=20s --retries=1 \
+            CMD [ "$(wget -qS -O /dev/null http://localhost:$PORT 2>&1 | grep -F HTTP | cut -d " " -f 4 | grep -o 200)" = "200"  ] || exit 1
 ENV PORT=3000 \
     BIND_ADDRESS=0.0.0.0 \
     APP_ORIGIN=http://localhost \
@@ -42,4 +44,5 @@ ENV PORT=3000 \
     NODE_ENV=production
 RUN apk add -q --progress --no-cache --update nodejs
 COPY --from=builder /meemo/ /meemo/
+USER 1000:1000
 ENTRYPOINT ["node", "meemo/app.js"]
