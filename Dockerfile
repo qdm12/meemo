@@ -2,13 +2,13 @@ ARG ALPINE_VERSION=3.8
 
 FROM alpine:${ALPINE_VERSION} as builder
 ARG MEEMO_VERSION=v1.9.0
-RUN apk add -q --progress --update npm git python2 python-dev build-base
+RUN apk add -q --progress --update npm git python-dev build-base
 RUN git clone --branch ${MEEMO_VERSION} --single-branch --depth 1 https://github.com/nebulade/meemo.git /temp &> /dev/null
 RUN mkdir /meemo && \
     cd /temp && \
     mv src /meemo/src && \
     mv frontend /meemo/frontend && \
-    mv gulpfile.js package.json app.js things.json logo.png /meemo/
+    mv admin gulpfile.js package.json app.js things.json logo.png /meemo/
 WORKDIR /meemo
 RUN npm --silent install
 RUN npm --silent -g install gulp
