@@ -27,6 +27,8 @@ Meemo build (external):
 [![Image size](https://images.microbadger.com/badges/image/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
 [![Image version](https://images.microbadger.com/badges/version/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
 
+[![Donate PayPal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/qdm12)
+
 | Image size | RAM usage | CPU usage |
 | --- | --- | --- |
 | 115MB | 70MB | Low |
