@@ -1,10 +1,10 @@
 .gitignore
-.travis.yml
-README.md
-docker-compose.yml
-.git/
-readme/
+*.yml
+*.md
+.git
+*.png
+LICENSE
 *.exe
-data/
-database/
+data
+database
 users.json

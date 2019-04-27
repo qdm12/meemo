@@ -1,11 +1,8 @@
 # Meemo on Docker
 
-*Lightweight Meemo 1.9.0 server with database on Docker with docker-compose*
-
-**WARNING: The user running the app has now UID 1000. Make sure `./data` and `./users.conf` both have read/write permissions and are owned by `1000:1000`**
+*Lightweight Meemo 1.9.2 server with database on Docker with docker-compose*
 
 Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**](https://github.com/nebulade/meemo)
-
 
 [![Docker Meemo](https://github.com/qdm12/meemo/raw/master/title.png)](https://hub.docker.com/r/qmcgaw/meemo/)
 
@@ -31,28 +28,40 @@ Meemo build (external):
 
 | Image size | RAM usage | CPU usage |
 | --- | --- | --- |
-| 115MB | 70MB | Low |
+| 101MB | 70MB | Low |
 
 It is based on:
 
 - [Meemo](https://github.com/nebulade/meemo) and its NodeJS dependencies
-- [Alpine 3.8](https://alpinelinux.org)
-- [NodeJS](https://pkgs.alpinelinux.org/package/v3.8/main/x86_64/nodejs)
+- [Alpine 3.9](https://alpinelinux.org)
+- [NodeJS](https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/nodejs)
 
 It also depends on a MongoDB database which is launched with Docker Compose.
 
 ## Setup
 
 1. Ensure [Docker](https://docs.docker.com/install) and [Docker-Compose](https://docs.docker.com/compose/install) are installed
-1. On your host machine, create the following:
-    - The users file `users.json`
-    - The data directory `data/`
-    - The database directory `database/`
+1. On your host machine, create the following files and directories
+
+    ```sh
+    # users file
+    touch users.json
+    # data and database directory
+    mkdir data database
+    # set ownership to map container user ID 1000
+    chown 1000 users.json data database
+    # set permissions
+    chmod 400 mkdir
+    chmod 700 data database
+    ```
+
+1. **If you have an ARM device**, refer to the [ARM devices section](#arm-devices) to build the image on your machine.
 1. Download [**docker-compose.yml**](https://raw.githubusercontent.com/qdm12/meemo/master/docker-compose.yml) on your host, modify it as you wish:
 
     ```sh
     wget https://raw.githubusercontent.com/qdm12/meemo/master/docker-compose.yml
     vi docker-compose.yml
+    # For ARM, you might change the mongo image to an ARM mongo image
     ```
 
 1. Launch the MongoDB database and Meemo container with
@@ -71,7 +80,7 @@ It also depends on a MongoDB database which is launched with Docker Compose.
 
 ## Configuration
 
-For your convenience, a shell script [**commands.sh**](https://raw.githubusercontent.com/qdm12/meemo/master/commands.sh) can be executed on your host
+Provided your Meemo container is still named `meemo`, the shell script [**commands.sh**](https://raw.githubusercontent.com/qdm12/meemo/master/commands.sh) can be executed on your host.
 
 The following options are provided:
 
@@ -113,6 +122,24 @@ All the changes are saved to `users.json`
 | `LOCAL_AUTH_FILE` | `/users.conf` | Users configuration file location (should not be changed) |
 | `NODE_ENV` | `production` | Should not be changed |
 
+## ARM devices
+
+- If your architecture is ARMHF (32 bit), run this on your ARM device:
+
+    ```sh
+    docker build -t qmcgaw/meemo \
+    --build-arg BASE_IMAGE=arm32v6/alpine \
+    https://github.com/qdm12/REPONAME_GITHUB.git
+    ```
+
+- If your architecture is AARCH64 (64 bit), run this on your ARM device:
+
+    ```sh
+    docker build -t qmcgaw/meemo \
+    --build-arg BASE_IMAGE=arm64v8/alpine \
+    https://github.com/qdm12/REPONAME_GITHUB.git
+    ```
+
 ## TODOs
 
 - [ ] Mail environment variables & test
@@ -121,4 +148,4 @@ All the changes are saved to `users.json`
 
 ## License
 
-This repository is under an [MIT license](https://github.com/qdm12/meemo/master/license)
+This repository is under an [MIT license](https://github.com/qdm12/meemo/master/LICENSE)
