@@ -7,7 +7,6 @@ Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**
 [![Docker Meemo](https://github.com/qdm12/meemo/raw/master/title.png)](https://hub.docker.com/r/qmcgaw/meemo/)
 
 Docker build:
-[![Build Status](https://travis-ci.org/qdm12/meemo.svg?branch=master)](https://travis-ci.org/qdm12/meemo)
 [![Docker Build Status](https://img.shields.io/docker/build/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
 
 Meemo build (external):
