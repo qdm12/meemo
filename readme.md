@@ -54,7 +54,34 @@ It also depends on a MongoDB database which is launched with Docker Compose.
     chmod 700 data database
     ```
 
-1. **If you have an ARM device**, refer to the [ARM devices section](#arm-devices) to build the image on your machine.
+1. <details><summary>CLICK IF YOU HAVE AN ARM DEVICE</summary><p>
+
+    - If you have a ARM 32 bit v6 architecture
+
+        ```sh
+        docker build -t qmcgaw/meemo \
+        --build-arg BASE_IMAGE=arm32v6/alpine \
+        https://github.com/qdm12/meemo.git
+        ```
+
+    - If you have a ARM 32 bit v7 architecture
+
+        ```sh
+        docker build -t qmcgaw/meemo \
+        --build-arg BASE_IMAGE=arm32v7/alpine \
+        https://github.com/qdm12/meemo.git
+        ```
+
+    - If you have a ARM 64 bit v8 architecture
+
+        ```sh
+        docker build -t qmcgaw/meemo \
+        --build-arg BASE_IMAGE=arm64v8/alpine \
+        https://github.com/qdm12/meemo.git
+        ```
+
+    </p></details>
+
 1. Download [**docker-compose.yml**](https://raw.githubusercontent.com/qdm12/meemo/master/docker-compose.yml) on your host, modify it as you wish:
 
     ```sh
@@ -120,24 +147,6 @@ All the changes are saved to `users.json`
 | `ATTACHMENT_DIR` | `/data` | Attachment storage directory (should not be changed) |
 | `LOCAL_AUTH_FILE` | `/users.conf` | Users configuration file location (should not be changed) |
 | `NODE_ENV` | `production` | Should not be changed |
-
-## ARM devices
-
-- If your architecture is ARMHF (32 bit), run this on your ARM device:
-
-    ```sh
-    docker build -t qmcgaw/meemo \
-    --build-arg BASE_IMAGE=arm32v6/alpine \
-    https://github.com/qdm12/REPONAME_GITHUB.git
-    ```
-
-- If your architecture is AARCH64 (64 bit), run this on your ARM device:
-
-    ```sh
-    docker build -t qmcgaw/meemo \
-    --build-arg BASE_IMAGE=arm64v8/alpine \
-    https://github.com/qdm12/REPONAME_GITHUB.git
-    ```
 
 ## TODOs
 
