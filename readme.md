@@ -27,12 +27,12 @@ Meemo build (external):
 
 | Image size | RAM usage | CPU usage |
 | --- | --- | --- |
-| 101MB | 70MB | Low |
+| 103MB | 70MB | Low |
 
 It is based on:
 
-- [Meemo](https://github.com/nebulade/meemo) and its NodeJS dependencies
-- [Alpine 3.9](https://alpinelinux.org)
+- [Meemo 1.9.2](https://github.com/nebulade/meemo) and its NodeJS dependencies
+- [Alpine 3.10](https://alpinelinux.org)
 - [NodeJS](https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/nodejs)
 
 It also depends on a MongoDB database which is launched with Docker Compose.
