@@ -2,14 +2,16 @@ ARG ALPINE_VERSION=3.12
 
 FROM alpine:${ALPINE_VERSION} AS builder
 ARG MEEMO_VERSION=v1.13.0
-RUN apk add -q --progress --update npm git python3-dev build-base
-RUN git clone --branch ${MEEMO_VERSION} --single-branch --depth 1 https://github.com/nebulade/meemo.git /temp &> /dev/null
-RUN mkdir /meemo && \
-    cd /temp && \
-    mv src /meemo/src && \
-    mv frontend /meemo/frontend && \
-    mv admin gulpfile.js package.json app.js things.json logo.* /meemo/
-WORKDIR /meemo
+RUN apk add -q --progress --update npm git
+RUN mkdir /tmp/download /tmp/build && \
+    cd /tmp/download && \
+    git clone --branch ${MEEMO_VERSION} --single-branch --depth 1 https://github.com/nebulade/meemo.git . &> /dev/null && \
+    mv src /tmp/build/src && \
+    mv frontend /tmp/build/frontend && \
+    mv admin gulpfile.js package.json app.js things.json logo.* /tmp/build/ && \
+    cd /tmp/build && \
+    rm -r /tmp/download
+WORKDIR /tmp/build
 RUN npm --silent install
 RUN npm --silent -g install gulp
 RUN gulp default
@@ -41,5 +43,5 @@ ENV PORT=3000 \
     ATTACHMENT_DIR=/data \
     CLOUDRON_LOCAL_AUTH_FILE=/users.json \
     NODE_ENV=production
-COPY --from=builder --chown=1000 /meemo/ /meemo/
+COPY --from=builder --chown=1000 /tmp/build/ /meemo/
 USER 1000
