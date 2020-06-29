@@ -8,7 +8,7 @@ RUN mkdir /tmp/download /tmp/build && \
     git clone --branch ${MEEMO_VERSION} --single-branch --depth 1 https://github.com/nebulade/meemo.git . &> /dev/null && \
     mv src /tmp/build/src && \
     mv frontend /tmp/build/frontend && \
-    mv admin gulpfile.js package.json app.js things.json logo.* /tmp/build/ && \
+    mv gulpfile.js package.json package-lock.json app.js things.json logo.png /tmp/build/ && \
     cd /tmp/build && \
     rm -r /tmp/download
 WORKDIR /tmp/build
