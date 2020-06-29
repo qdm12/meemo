@@ -1,7 +1,6 @@
-ARG BASE_IMAGE=alpine
 ARG ALPINE_VERSION=3.12
 
-FROM ${BASE_IMAGE}:${ALPINE_VERSION} AS builder
+FROM alpine:${ALPINE_VERSION} AS builder
 ARG MEEMO_VERSION=v1.13.0
 RUN apk add -q --progress --update npm git python3-dev build-base
 RUN git clone --branch ${MEEMO_VERSION} --single-branch --depth 1 https://github.com/nebulade/meemo.git /temp &> /dev/null
@@ -15,7 +14,7 @@ RUN npm --silent install
 RUN npm --silent -g install gulp
 RUN gulp default
 
-FROM ${BASE_IMAGE}:${ALPINE_VERSION}
+FROM alpine:${ALPINE_VERSION}
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION

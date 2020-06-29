@@ -6,34 +6,27 @@ Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**
 
 [![Docker Meemo](https://github.com/qdm12/meemo/raw/master/title.png)](https://hub.docker.com/r/qmcgaw/meemo/)
 
-Docker build:
-[![Docker Build Status](https://img.shields.io/docker/build/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
+[![Build status](https://github.com/qdm12/meemo/workflows/Buildx%20latest/badge.svg)](https://github.com/qdm12/meemo/actions?query=workflow%3A%22Buildx+latest%22)
+[![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
+[![Docker Stars](https://img.shields.io/docker/stars/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
+[![Image size](https://images.microbadger.com/badges/image/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
+[![Image version](https://images.microbadger.com/badges/version/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
 
-Meemo build (external):
-[![Build Status](https://travis-ci.org/nebulade/meemo.svg?branch=master)](https://travis-ci.org/nebulade/meemo)
-
+[![Join Slack channel](https://img.shields.io/badge/slack-@qdm12-yellow.svg?logo=slack)](https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk)
 [![GitHub last commit](https://img.shields.io/github/last-commit/qdm12/meemo.svg)](https://github.com/qdm12/meemo/commits)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/qdm12/meemo.svg)](https://github.com/qdm12/meemo/commits)
 [![GitHub issues](https://img.shields.io/github/issues/qdm12/meemo.svg)](https://github.com/qdm12/meemo/issues)
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
-[![Docker Stars](https://img.shields.io/docker/stars/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
-[![Docker Automated](https://img.shields.io/docker/automated/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
+[![Donate PayPal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/qmcgaw)
 
-[![Image size](https://images.microbadger.com/badges/image/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
-[![Image version](https://images.microbadger.com/badges/version/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
+## Features
 
-[![Donate PayPal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/qdm12)
-
-| Image size | RAM usage | CPU usage |
-| --- | --- | --- |
-| 103MB | 70MB | Low |
-
-It is based on:
-
-- [Meemo 1.13.0](https://github.com/nebulade/meemo) and its NodeJS dependencies
-- [Alpine 3.12](https://alpinelinux.org)
-- [NodeJS](https://pkgs.alpinelinux.org/package/v3.12/main/x86_64/nodejs)
+- Lightweight (uncompressed amd64) size of 114MB
+- Based on:
+  - [Meemo 1.13.0](https://github.com/nebulade/meemo) and its NodeJS dependencies
+  - [Alpine 3.12](https://alpinelinux.org)
+  - [NodeJS](https://pkgs.alpinelinux.org/package/v3.12/main/x86_64/nodejs)
+- Compatible with `amd64`, `386`, `arm64`, `arm32v7` and `arm32v6` CPU architectures
 
 It also depends on a MongoDB database which is launched with Docker Compose.
 
@@ -53,34 +46,6 @@ It also depends on a MongoDB database which is launched with Docker Compose.
     chmod 400 users.json
     chmod 700 data database
     ```
-
-1. <details><summary>CLICK IF YOU HAVE AN ARM DEVICE</summary><p>
-
-    - If you have a ARM 32 bit v6 architecture
-
-        ```sh
-        docker build -t qmcgaw/meemo \
-        --build-arg BASE_IMAGE=arm32v6/alpine \
-        https://github.com/qdm12/meemo.git
-        ```
-
-    - If you have a ARM 32 bit v7 architecture
-
-        ```sh
-        docker build -t qmcgaw/meemo \
-        --build-arg BASE_IMAGE=arm32v7/alpine \
-        https://github.com/qdm12/meemo.git
-        ```
-
-    - If you have a ARM 64 bit v8 architecture
-
-        ```sh
-        docker build -t qmcgaw/meemo \
-        --build-arg BASE_IMAGE=arm64v8/alpine \
-        https://github.com/qdm12/meemo.git
-        ```
-
-    </p></details>
 
 1. Download [**docker-compose.yml**](https://raw.githubusercontent.com/qdm12/meemo/master/docker-compose.yml) on your host, modify it as you wish:
 
