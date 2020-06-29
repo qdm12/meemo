@@ -1,6 +1,6 @@
 ARG ALPINE_VERSION=3.12
 
-FROM alpine:${ALPINE_VERSION} AS builder
+FROM --platform=linux/amd64 alpine:${ALPINE_VERSION} AS builder
 ARG MEEMO_VERSION=v1.13.0
 RUN apk add -q --progress --update npm git
 RUN mkdir /tmp/download /tmp/build && \
