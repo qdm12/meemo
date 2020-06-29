@@ -18,21 +18,17 @@ RUN gulp default
 FROM ${BASE_IMAGE}:${ALPINE_VERSION}
 ARG BUILD_DATE
 ARG VCS_REF
-LABEL org.label-schema.schema-version="1.0.0-rc1" \
-    maintainer="quentin.mcgaw@gmail.com" \
-    org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vcs-url="https://github.com/qdm12/meemo" \
-    org.label-schema.url="https://github.com/qdm12/meemo" \
-    org.label-schema.vcs-description="Lightweight Meemo 1.13.0 server" \
-    org.label-schema.vcs-usage="https://github.com/qdm12/meemo/blob/master/README.md#setup" \
-    org.label-schema.docker.cmd="docker-compose up -d" \
-    org.label-schema.docker.cmd.devel="docker-compose up" \
-    org.label-schema.docker.params="" \
-    org.label-schema.version="" \
-    image-size="114MB" \
-    ram-usage="70MB" \
-    cpu-usage="Low"
+ARG VERSION
+LABEL \
+    org.opencontainers.image.authors="quentin.mcgaw@gmail.com" \
+    org.opencontainers.image.created=$BUILD_DATE \
+    org.opencontainers.image.version=$VERSION \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.url="https://github.com/qdm12/meemo" \
+    org.opencontainers.image.documentation="https://github.com/qdm12/meemo/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/qdm12/meemo" \
+    org.opencontainers.image.title="Meemo" \
+    org.opencontainers.image.description="Meemo container"
 EXPOSE 3000/tcp
 RUN apk add -q --progress --no-cache --update nodejs && \
     rm -rf /var/cache/apk/*
