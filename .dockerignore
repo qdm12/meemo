@@ -1,10 +1,10 @@
-.gitignore
-*.yml
-*.md
 .git
-*.png
+.github
+.gitignore
+docker-compose.yml
 LICENSE
-*.exe
+readme.md
+title.png
 data
 database
 users.json
