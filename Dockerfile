@@ -13,8 +13,8 @@ RUN mkdir /tmp/download /tmp/build && \
     rm -r /tmp/download
 WORKDIR /tmp/build
 RUN npm --silent install
-RUN npm --silent -g install gulp
-RUN gulp default
+RUN npm --silent -g install gulp-cli
+RUN gulp default --revision ${MEEMO_VERSION}
 
 FROM alpine:${ALPINE_VERSION}
 ARG BUILD_DATE
