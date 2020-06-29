@@ -1,6 +1,6 @@
 # Meemo on Docker
 
-*Lightweight Meemo 1.9.2 server with database on Docker with docker-compose*
+*Lightweight Meemo 1.13.0 server with database on Docker with docker-compose*
 
 Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**](https://github.com/nebulade/meemo)
 
@@ -31,9 +31,9 @@ Meemo build (external):
 
 It is based on:
 
-- [Meemo 1.9.2](https://github.com/nebulade/meemo) and its NodeJS dependencies
-- [Alpine 3.10](https://alpinelinux.org)
-- [NodeJS](https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/nodejs)
+- [Meemo 1.13.0](https://github.com/nebulade/meemo) and its NodeJS dependencies
+- [Alpine 3.12](https://alpinelinux.org)
+- [NodeJS](https://pkgs.alpinelinux.org/package/v3.12/main/x86_64/nodejs)
 
 It also depends on a MongoDB database which is launched with Docker Compose.
 
