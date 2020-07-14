@@ -107,8 +107,8 @@ All the changes are saved to `users.json`
 | --- | --- | --- |
 | `PORT` | `3000` | TCP port to listen on internally (should not be changed) |
 | `BIND_ADDRESS` | `0.0.0.0` (all) | Address to listen on internally (should not be changed) |
-| `APP_ORIGIN` | `http://localhost` | Used to share tasks etc. |
-| `MONGODB_URL` | `mongodb://mongodb:27017/meemo` | Location of the Mongo database (should not be changed) |
+| `CLOUDRON_APP_ORIGIN` | `http://localhost` | Used to share tasks etc. |
+| `CLOUDRON_MONGODB_URL` | `mongodb://mongodb:27017/meemo` | Location of the Mongo database (should not be changed) |
 | `ATTACHMENT_DIR` | `/data` | Attachment storage directory (should not be changed) |
 | `LOCAL_AUTH_FILE` | `/users.conf` | Users configuration file location (should not be changed) |
 | `NODE_ENV` | `production` | Should not be changed |
