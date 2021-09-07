@@ -18,14 +18,14 @@ RUN npm --silent -g install gulp-cli
 RUN gulp default --revision ${MEEMO_VERSION}
 
 FROM alpine:${ALPINE_VERSION}
-ARG BUILD_DATE
-ARG VCS_REF
+ARG CREATED
+ARG COMMIT
 ARG VERSION
 LABEL \
     org.opencontainers.image.authors="quentin.mcgaw@gmail.com" \
-    org.opencontainers.image.created=$BUILD_DATE \
+    org.opencontainers.image.created=$CREATED \
     org.opencontainers.image.version=$VERSION \
-    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.revision=$COMMIT \
     org.opencontainers.image.url="https://github.com/qdm12/meemo" \
     org.opencontainers.image.documentation="https://github.com/qdm12/meemo/blob/master/README.md" \
     org.opencontainers.image.source="https://github.com/qdm12/meemo" \
