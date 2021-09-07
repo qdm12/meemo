@@ -22,8 +22,8 @@ Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**
 - Lightweight (uncompressed amd64) size of 114MB
 - Based on:
   - [Meemo 1.13.0](https://github.com/nebulade/meemo) and its NodeJS dependencies
-  - [Alpine 3.12](https://alpinelinux.org)
-  - [NodeJS](https://pkgs.alpinelinux.org/package/v3.12/main/x86_64/nodejs)
+  - [Alpine 3.14](https://alpinelinux.org)
+  - [NodeJS](https://pkgs.alpinelinux.org/package/v3.14/main/x86_64/nodejs)
 - Compatible with `amd64`, `386`, `arm64`, `arm32v7` and `arm32v6` CPU architectures
 
 It also depends on a MongoDB database which is launched with Docker Compose.

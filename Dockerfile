@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION=3.12
+ARG ALPINE_VERSION=3.14
 
 # Using amd64 to build faster and without error the final javascript code
 FROM --platform=linux/amd64 alpine:${ALPINE_VERSION} AS builder
