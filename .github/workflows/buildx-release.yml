@@ -26,4 +26,3 @@ jobs:
             -t qmcgaw/meemo:${GITHUB_REF##*/} \
             --push \
             .
-      - run: curl -X POST https://hooks.microbadger.com/images/qmcgaw/meemo/6C45PnFKaNnQg0HAtTnK1GANz64= || exit 0

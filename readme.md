@@ -9,8 +9,6 @@ Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**
 [![Build status](https://github.com/qdm12/meemo/workflows/Buildx%20latest/badge.svg)](https://github.com/qdm12/meemo/actions?query=workflow%3A%22Buildx+latest%22)
 [![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
 [![Docker Stars](https://img.shields.io/docker/stars/qmcgaw/meemo.svg)](https://hub.docker.com/r/qmcgaw/meemo)
-[![Image size](https://images.microbadger.com/badges/image/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
-[![Image version](https://images.microbadger.com/badges/version/qmcgaw/meemo.svg)](https://microbadger.com/images/qmcgaw/meemo)
 
 [![Join Slack channel](https://img.shields.io/badge/slack-@qdm12-yellow.svg?logo=slack)](https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk)
 [![GitHub last commit](https://img.shields.io/github/last-commit/qdm12/meemo.svg)](https://github.com/qdm12/meemo/commits)
