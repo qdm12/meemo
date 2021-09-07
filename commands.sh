@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ $UID != 0 ]; then
   printf "Please run this script with sudo:\nsudo $0 $*\n"
