@@ -2,7 +2,7 @@ ARG ALPINE_VERSION=3.14
 
 # Using amd64 to build faster and without error the final javascript code
 FROM --platform=linux/amd64 alpine:${ALPINE_VERSION} AS builder
-ARG MEEMO_VERSION=v1.13.1
+ARG MEEMO_VERSION=v1.13.2
 RUN apk add -q --progress --update npm git
 RUN mkdir /tmp/download /tmp/build && \
     cd /tmp/download && \

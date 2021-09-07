@@ -1,6 +1,6 @@
 # Meemo on Docker
 
-*Lightweight Meemo 1.13.0 server with database on Docker with docker-compose*
+*Lightweight Meemo 1.13.2 server with database on Docker with docker-compose*
 
 Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**](https://github.com/nebulade/meemo)
 
@@ -19,9 +19,9 @@ Manage your todo list, bookmarks and data in the Markdown format with [**Meemo**
 
 ## Features
 
-- Lightweight (uncompressed amd64) size of 114MB
+- Lightweight (uncompressed amd64) size of 127MB
 - Based on:
-  - [Meemo 1.13.0](https://github.com/nebulade/meemo) and its NodeJS dependencies
+  - [Meemo 1.13.2](https://github.com/nebulade/meemo) and its NodeJS dependencies
   - [Alpine 3.14](https://alpinelinux.org)
   - [NodeJS](https://pkgs.alpinelinux.org/package/v3.14/main/x86_64/nodejs)
 - Compatible with `amd64`, `386`, `arm64`, `arm32v7` and `arm32v6` CPU architectures
