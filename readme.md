@@ -41,7 +41,7 @@ It also depends on a MongoDB database which is launched with Docker Compose.
     # set ownership to map container user ID 1000
     chown 1000 users.json data database
     # set permissions
-    chmod 400 users.json
+    chmod 600 users.json
     chmod 700 data database
     ```
 
