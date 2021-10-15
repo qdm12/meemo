@@ -49,8 +49,6 @@ It also depends on a MongoDB database which is launched with Docker Compose.
 
     ```sh
     wget https://raw.githubusercontent.com/qdm12/meemo/master/docker-compose.yml
-    vi docker-compose.yml
-    # For ARM, you might change the mongo image to an ARM mongo image
     ```
 
 1. Launch the MongoDB database and Meemo container with
@@ -69,33 +67,21 @@ It also depends on a MongoDB database which is launched with Docker Compose.
 
 ## Configuration
 
-Provided your Meemo container is still named `meemo`, the shell script [**commands.sh**](https://raw.githubusercontent.com/qdm12/meemo/master/commands.sh) can be executed on your host.
+We assume your Meemo container is named `meemo` in the following.
 
-The following options are provided:
+```sh
+# List users
+docker exec meemo ./meemo/admin users
 
-- List users
+# Add a user
+docker exec meemo ./meemo/admin user-add -u yourUser -p yourPassword --display-name yourUser
 
-    ```sh
-    ./commands.sh ls
-    ```
+# Edit a user
+docker exec meemo ./meemo/admin user-edit -u yourUser -p yourPassword --display-name yourUser
 
-- Add user
-
-    ```sh
-    ./commands.sh add username password
-    ```
-
-- Edit user
-
-    ```sh
-    ./commands.sh edit username password
-    ```
-
-- Remove user
-
-    ```sh
-    ./commands.sh remove username
-    ```
+# Remove a user
+docker exec meemo ./meemo/admin user-del -u yourUser
+```
 
 All the changes are saved to `users.json`
 
